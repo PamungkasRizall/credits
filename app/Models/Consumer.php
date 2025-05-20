@@ -38,7 +38,7 @@ class Consumer extends Authenticatable
             $nodeProvider = new RandomNodeProvider();
             do{
 
-                $uuid = Uuid::uuid4($nodeProvider->getNode());
+                $uuid = Uuid::uuid4();
 
                 $uuid_exist = self::where('id', $uuid)->exists();
 
@@ -57,5 +57,10 @@ class Consumer extends Authenticatable
     public function subDistrict(): BelongsTo
     {
         return $this->belongsTo(SubDistrict::class, 'sub_district_code', 'sub_district_code');
+    }
+
+    public function lastTransaction(): HasOne
+    {
+        return $this->hasOne(ReceivablesRegistration::class)->latest('created_at');
     }
 }

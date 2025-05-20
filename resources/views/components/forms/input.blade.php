@@ -1,7 +1,11 @@
 @php
     $pl9 = $attributes->has('svgd') ? 'pl-9' : '';
     $bgReadonly = $attributes->has('readonly') ? ' bg-primary/10 ' : ' bg-transparent';
-    $model = $attributes->has('wire:model') ? $attributes->get('wire:model') : $attributes->get('wire:model.live');
+    $model = $attributes->get('wire:model')
+        ?? $attributes->get('wire:model.live')
+        ?? $attributes->get('wire:model.blur')
+        ?? collect($attributes->getAttributes())
+            ->first(fn($v, $k) => str_starts_with($k, 'wire:model.debounce'));
 @endphp
 
 <label class="block {{ $attributes->has('labelClass') ? $attributes->get('labelClass') : '' }}">

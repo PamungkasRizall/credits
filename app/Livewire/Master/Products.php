@@ -23,7 +23,8 @@ class Products extends Component
 
     public string $name = '';
     public string $type = '';
-    public string $price = '0';
+    public string $hpp = '';
+    public string $price = '';
     public ?string $notes = '';
     public int $merk_id;
     public int $unit_id;
@@ -191,5 +192,24 @@ class Products extends Component
                 'model_id' => $this->model_id
             ]);
         }
+    }
+
+    public function updatedHpp($value)
+    {
+        $hpp = numericOnly($value);
+        $price = $hpp;
+
+        if ($price <= 1000000) {
+            // Tambah 10% jika harga <= 1 juta
+            $price += $hpp * 0.10;
+        } elseif ($price > 1000000 && $price <= 2000000) {
+            // Tambah 7.5% jika harga antara 1 juta sampai 2 juta
+            $price += $hpp * 0.075;
+        } elseif ($price > 2000000) {
+            // Tambah 5% jika harga > 2 juta
+            $price += $hpp * 0.05;
+        }
+
+        $this->price = currency(round($price), true);
     }
 }

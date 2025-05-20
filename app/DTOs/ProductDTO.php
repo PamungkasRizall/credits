@@ -10,6 +10,7 @@ class ProductDTO
         public readonly int $merk_id,
         public readonly string $type,
         public readonly int $unit_id,
+        public readonly int $hpp,
         public readonly int $price,
     ) {}
 
@@ -22,6 +23,7 @@ class ProductDTO
             merk_id: $data['merk_id'],
             type: $data['type'],
             unit_id: $data['unit_id'],
+            hpp: numericOnly($data['hpp']),
             price: numericOnly($data['price']),
         );
     }

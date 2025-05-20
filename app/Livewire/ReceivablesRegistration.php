@@ -126,6 +126,12 @@ class ReceivablesRegistration extends Component
         $this->authorize('receivables-registration-create');
         $validateData = $this->validateAndFormatData();
 
+        if (numericOnly($this->total) < $this->item_price) {
+            $this->notifyError('Total lebih kecil dari harga barang');
+
+            return false;
+        }
+
         try {
 
             $dto = ReceivablesRegistrationDTO::fromObject($validateData);
@@ -134,26 +140,13 @@ class ReceivablesRegistration extends Component
             $this->handleSuccess();
 
         } catch(Exception $e) {
-            $this->handleError($e);
-            $this->logError($e->getMessage(), 'store');
+            $this->handleError($e, 'store');
         }
     }
 
     private function validateAndFormatData(): array
     {
         return $this->validate($this->receivablesRegistrationRequest->rules($this->model_id));
-    }
-
-    private function handleSuccess(): void
-    {
-        $this->resetFields();
-        $this->notifySuccess();
-        $this->dispatch('refreshDatatable');
-    }
-
-    private function handleError(Exception $e): void
-    {
-        $this->notifyError($e->getMessage());
     }
 
     public function resetFields(bool $closeModal = true):void
@@ -197,7 +190,7 @@ class ReceivablesRegistration extends Component
         $tenor = $this->tenor ?: 1;
         $dp = numericOnly($this->down_payment ?: 0);
         $billPerDay = numericOnly($this->bill_per_day ?: 1);
-        $total = ($tenor * $billPerDay) + $dp;
+        $total = $tenor * $billPerDay + $dp;
         $this->total = currency($total, true);
     }
 
@@ -250,8 +243,7 @@ class ReceivablesRegistration extends Component
             $this->handleSuccess();
 
         } catch(Exception $e) {
-            $this->handleError($e);
-            $this->logError($e->getMessage(), 'store status');
+            $this->handleError($e, 'store status');
         }
     }
 
@@ -277,8 +269,7 @@ class ReceivablesRegistration extends Component
             $this->handleSuccess();
 
         } catch(Exception $e) {
-            $this->handleError($e);
-            $this->logError($e->getMessage(), 'store angsuran');
+            $this->handleError($e, 'store angsuran');
         }
     }
 

@@ -60,6 +60,23 @@
                     {{ $consumer->business_address }}
                 </p>
             </div>
+            <div class="flex justify-between">
+                <p class="text-right">Status Piutang Terakhir</p>
+                @if ($consumer->lastTransaction)
+                    @php
+                        $status = $consumer->lastTransaction->status;
+                        $color = $status->coloringClasses();
+                    @endphp
+
+                    <div class="badge bg-{{ $color }}/10 text-{{ $color }} dark:bg-{{ $color }}/15">
+                        {{ $status->naming() }}
+                    </div>
+                @else
+                    <div class="badge bg-navy-700 text-white dark:bg-navy-900">
+                        Belum Pernah Piutang
+                    </div>
+                @endif
+            </div>
         </div>
     </div>
 </div>

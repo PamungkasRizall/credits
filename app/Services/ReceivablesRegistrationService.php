@@ -20,7 +20,7 @@ class ReceivablesRegistrationService
     {
         return ReceivablesRegistration::with(
             'product',
-                'consumer',
+                'consumer.lastTransaction',
                 'sales',
                 'supervisor',
                 'wasdit',

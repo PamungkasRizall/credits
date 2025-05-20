@@ -37,7 +37,7 @@ class Product extends Model implements HasMedia
             $nodeProvider = new RandomNodeProvider();
             do{
 
-                $uuid = Uuid::uuid4($nodeProvider->getNode());
+                $uuid = Uuid::uuid4();
 
                 $uuid_exist = self::where('id', $uuid)->exists();
 

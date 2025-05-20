@@ -19,7 +19,7 @@
 
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <x-forms.input
-            wire:model="down_payment"
+            wire:model.live="down_payment"
             placeholder="Rp ..."
             title="DP"
             class="text-right"

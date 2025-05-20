@@ -37,7 +37,7 @@ class ConsumersTable extends DataTableComponent
 
     public function builder(): Builder
     {
-        return Consumer::select('consumers.sub_district_code')->with('subDistrict');
+        return Consumer::select('consumers.sub_district_code')->with('subDistrict', 'lastTransaction');
     }
 
     public function columns(): array
@@ -50,7 +50,7 @@ class ConsumersTable extends DataTableComponent
                 ->sortable()
                 ->format(
                     function ($value, $row) {
-                        if ($this->modal) {
+                        if ($this->modal && !$row->lastTransaction) {
                             return '<a class="text-primary" href="javascript:;" wire:click="$dispatch(\'selectedConsumer\', { row: '. $row .' })">'. $value .'</a>';
                         }
 
@@ -75,6 +75,29 @@ class ConsumersTable extends DataTableComponent
             Column::make("Radius", "radius")
                 ->searchable()
                 ->sortable(),
+            Column::make("Status Piutang Terakhir", "name")
+                ->searchable()
+                ->sortable()
+                ->format(
+                    function ($value, $row) {
+
+                        if ($row->lastTransaction)
+                        {
+                            $status = $row->lastTransaction->status;
+                            $color = $status->coloringClasses();
+
+                            return '
+                            <div class="badge bg-'.$color.'/10 text-'.$color.' dark:bg-'.$color.'/15">
+                                '.$status->naming().'
+                            </div>';
+                        } else {
+                            return '<div class="badge bg-navy-700 text-white dark:bg-navy-900">
+                                Belum Pernah Piutang
+                            </div>';
+                        }
+                    }
+                )
+                ->html(),
             Column::make("Created at", "created_at")
                 ->format(
                     fn($value) => Carbon::make($value)->format('d/m/Y H:i:s')

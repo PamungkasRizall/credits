@@ -13,7 +13,7 @@ class ConsumerService
 
     public function findOrFail(String $id): Consumer
     {
-        return Consumer::findOrFail($id);
+        return Consumer::with('lastTransaction')->findOrFail($id);
     }
 
     public function storeConsumer(ConsumerDTO $dto): Consumer

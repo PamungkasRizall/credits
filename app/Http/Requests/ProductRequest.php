@@ -13,7 +13,8 @@ class ProductRequest extends FormRequest
         'merk_id' => 0,
         'type' => '',
         'unit_id' => 0,
-        'price' => '0',
+        'hpp' => '',
+        'price' => '',
     ];
 
     public function rules(?string $model_id = null): array
@@ -33,6 +34,9 @@ class ProductRequest extends FormRequest
                 'required',
             ],
             'unit_id' => [
+                'required',
+            ],
+            'hpp' => [
                 'required',
             ],
             'price' => [

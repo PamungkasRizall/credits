@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name', 100)->index()->unique();
             $table->string('type', 100);
+            $table->double('hpp');
             $table->double('price');
             $table->text('notes')->nullable();
             $table->tinyInteger('active')->comment('0: Not Active, 1: Active')->default(1);

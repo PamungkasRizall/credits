@@ -18,15 +18,20 @@ class ProductsTable extends DataTableComponent
     {
         $this->setPrimaryKey('id')
             ->setFilterLayoutSlideDown()
-            ->setTdAttributes(function(Column $column, $row, $columnIndex, $rowIndex) {
-                $attributes = [
-                    'class' => ($this->modal) ? 'text-xs+' : '',
+            ->setTdAttributes(function (Column $column, $row, $columnIndex, $rowIndex) {
+                $classes = [];
+
+                if ($this->modal) {
+                    $classes[] = 'text-xs+';
+                }
+
+                if (in_array($column->getField(), ['hpp', 'price'])) {
+                    $classes[] = 'text-right';
+                }
+
+                return [
+                    'class' => implode(' ', $classes),
                 ];
-
-                if ($column->isField('price'))
-                    $attributes['class'] = $attributes['class'] .' text-right';
-
-                return $attributes;
             });
 
         if ($this->modal)
@@ -66,6 +71,12 @@ class ProductsTable extends DataTableComponent
             Column::make("Tipe", "type")
                 ->searchable()
                 ->sortable(),
+            Column::make("HPP", "hpp")
+                ->searchable()
+                ->sortable()
+                ->format(
+                    fn($value, $row, Column $column) => currency($value)
+                ),
             Column::make("Harga", "price")
                 ->searchable()
                 ->sortable()
