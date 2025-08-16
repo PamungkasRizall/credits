@@ -32,32 +32,27 @@
 
 </head>
 
-<body x-data="{}" x-bind="$store.global.documentBody"
-    class="
-        @isset($isSidebarOpen)
-            {{ $isSidebarOpen === 'true' ? 'is-sidebar-open' : '' }}
-        @endisset
-        @isset($isHeaderBlur)
-            {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }}
-        @endisset
-        @isset($hasMinSidebar)
-            {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }}
-        @endisset
-        @isset($headerSticky)
-            {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }}
-        @endisset">
+<body
+    x-data
+    x-bind="$store.global.documentBody"
+    class="is-header-blur navigation:horizontal"
+>
 
     <x-app-partials.app-preloader></x-app-partials.app-preloader>
 
-    <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900" x-cloak>
+    <div
+      id="root"
+      class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900"
+      x-cloak
+    >
         <!-- Sidebar -->
-        <div class="sidebar print:hidden">
+        {{-- <div class="sidebar print:hidden">
             <!-- Main Sidebar -->
             <x-app-partials.main-sidebar />
 
             <!-- Sidebar Panel -->
             <x-app-partials.sidebar-panel></x-app-partials.sidebar-panel>
-        </div>
+        </div> --}}
 
         <!-- App Header -->
         <x-app-partials.header></x-app-partials.header>
@@ -75,20 +70,22 @@
 -->
     <div id="x-teleport-target"></div>
 
-    <div @notify.window="$notification({text: $event.detail.message, variant: $event.detail.type, position: 'center-top'})">
+    <div
+        @notify.window="$notification({text: $event.detail.message, variant: $event.detail.type, position: 'center-top'})">
 
-    <script>
-        window.addEventListener('redirect', event => {
+        <script>
+            window.addEventListener('redirect', event => {
             setTimeout(function(){
                 window.location = event.detail.url;
             }, 2000);
         });
-    </script>
+        </script>
 
-    {{-- @livewireScripts --}}
-    @livewireScriptConfig
+        {{-- @livewireScripts --}}
+        @livewireScriptConfig
 
-    @stack('scripts')
+        @stack('scripts')
 
 </body>
+
 </html>

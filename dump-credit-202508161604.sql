@@ -30,7 +30,7 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Samsung','Merk','2025-01-01 08:04:23','2025-01-01 08:04:23',NULL),(2,'Aqua','Merk','2025-01-01 08:04:23','2025-01-01 08:06:10',NULL),(3,'Buah','Unit','2025-01-01 08:04:23','2025-01-01 08:05:22',NULL),(4,'Bal','Unit','2025-01-01 08:11:09','2025-01-01 08:11:09',NULL),(5,'LG','Merk','2025-01-01 09:40:49','2025-01-01 09:40:49',NULL),(6,'Botol','Unit','2025-01-03 04:11:18','2025-01-03 04:11:18',NULL),(7,'Ibu','Hubungan Keluarga','2025-01-18 01:34:06','2025-01-18 01:34:06',NULL),(8,'Ayah','Hubungan Keluarga','2025-01-18 01:34:13','2025-01-18 01:34:13',NULL),(9,'Anak','Hubungan Keluarga','2025-01-18 01:34:47','2025-01-18 01:34:47',NULL),(10,'Kakak','Hubungan Keluarga','2025-01-18 01:34:56','2025-01-18 01:34:56',NULL),(11,'Adik','Hubungan Keluarga','2025-01-18 01:35:06','2025-01-18 01:35:06',NULL),(12,'Sharp','Merk','2025-01-18 01:35:23','2025-01-18 01:35:34',NULL),(13,'90','Tenor','2025-01-18 01:37:45','2025-01-18 01:37:45',NULL),(14,'150','Tenor','2025-01-18 01:37:56','2025-01-18 01:37:56',NULL),(16,'Sepupu','Hubungan Keluarga','2025-01-20 12:20:03','2025-01-20 12:20:03',NULL),(17,'Sales','Kategori User','2025-01-20 15:04:25','2025-01-20 15:04:25',NULL),(18,'Supervisor','Kategori User','2025-01-20 15:04:33','2025-01-20 15:04:33',NULL),(19,'Wasdit','Kategori User','2025-01-20 15:04:49','2025-01-20 15:04:49',NULL),(20,'AR','Kategori User','2025-01-20 15:04:58','2025-01-20 15:04:58',NULL),(21,'Kolektor','Kategori User','2025-01-20 15:05:06','2025-01-20 15:05:06',NULL),(22,'Super Admin','Kategori User','2025-01-20 15:05:57','2025-01-20 15:05:57',NULL),(23,'120','Tenor','2025-02-01 10:35:55','2025-02-01 10:35:55',NULL),(24,'180','Tenor','2025-02-01 10:36:10','2025-02-01 10:36:10',NULL);
+INSERT INTO `categories` VALUES (1,'Samsung','Merk','2025-01-01 08:04:23','2025-01-01 08:04:23',NULL),(2,'Aqua','Merk','2025-01-01 08:04:23','2025-01-01 08:06:10',NULL),(3,'Buah','Unit','2025-01-01 08:04:23','2025-01-01 08:05:22',NULL),(4,'Bal','Unit','2025-01-01 08:11:09','2025-01-01 08:11:09',NULL),(5,'LG','Merk','2025-01-01 09:40:49','2025-01-01 09:40:49',NULL),(6,'Botol','Unit','2025-01-03 04:11:18','2025-01-03 04:11:18',NULL),(7,'Ibu','Hubungan Keluarga','2025-01-18 01:34:06','2025-01-18 01:34:06',NULL),(8,'Ayah','Hubungan Keluarga','2025-01-18 01:34:13','2025-01-18 01:34:13',NULL),(9,'Anak','Hubungan Keluarga','2025-01-18 01:34:47','2025-01-18 01:34:47',NULL),(10,'Kakak','Hubungan Keluarga','2025-01-18 01:34:56','2025-01-18 01:34:56',NULL),(11,'Adik','Hubungan Keluarga','2025-01-18 01:35:06','2025-01-18 01:35:06',NULL),(12,'Sharp','Merk','2025-01-18 01:35:23','2025-01-18 01:35:34',NULL),(13,'90','Tenor','2025-01-18 01:37:45','2025-01-18 01:37:45',NULL),(14,'150','Tenor','2025-01-18 01:37:56','2025-01-18 01:37:56',NULL),(16,'Sepupu','Hubungan Keluarga','2025-01-20 12:20:03','2025-01-20 12:20:03',NULL),(17,'Sales','Kategori User','2025-01-20 15:04:25','2025-01-20 15:04:25',NULL),(18,'Supervisor','Kategori User','2025-01-20 15:04:33','2025-01-20 15:04:33',NULL),(19,'Wasdit','Kategori User','2025-01-20 15:04:49','2025-01-20 15:04:49',NULL),(20,'AR','Kategori User','2025-01-20 15:04:58','2025-01-20 15:04:58',NULL),(21,'Kolektor','Kategori User','2025-01-20 15:05:06','2025-01-20 15:05:06',NULL),(22,'Super Admin','Kategori User','2025-01-20 15:05:57','2025-01-20 15:05:57',NULL),(23,'120','Tenor','2025-02-01 10:35:55','2025-02-01 10:35:55',NULL),(24,'180','Tenor','2025-02-01 10:36:10','2025-02-01 10:36:10',NULL),(25,'Istri','Hubungan Keluarga','2025-01-18 01:35:06','2025-01-18 01:35:06',NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,6 +393,7 @@ CREATE TABLE `products` (
   `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hpp` double NOT NULL,
   `price` double NOT NULL,
   `notes` text COLLATE utf8mb4_unicode_ci,
   `active` tinyint NOT NULL DEFAULT '1' COMMENT '0: Not Active, 1: Active',
@@ -425,7 +426,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES ('8386138b-1206-49ca-a770-ce61e9e00b34','Kulkas 2 Pintu','Az',4000000,'<p> catatan</p>',1,5,3,'2025-01-01 09:41:36','e6faf8c9-c369-4cbb-b99c-f0166ad9da29','2025-01-02 08:04:27','e6faf8c9-c369-4cbb-b99c-f0166ad9da29',NULL,NULL),('e00e8b0d-07f9-4d89-8a5b-005157904e64','SmartTV 32 inch','SE001',3000000,'<p> mencoba</p>',1,1,3,'2025-01-01 09:14:55','e6faf8c9-c369-4cbb-b99c-f0166ad9da29','2025-01-02 08:15:10','e6faf8c9-c369-4cbb-b99c-f0166ad9da29',NULL,NULL);
+INSERT INTO `products` VALUES ('60fb112b-a60f-43dc-8779-85f0b4f6ea0d','Laptop MacBook Pro 12','12 Pro',20000000,21000000,'<p> catatan saja</p>',1,1,3,'2025-05-20 02:46:34','e6faf8c9-c369-4cbb-b99c-f0166ad9da29','2025-05-20 02:46:34',NULL,NULL,NULL),('8386138b-1206-49ca-a770-ce61e9e00b34','Kulkas 2 Pintu','Az',0,4000000,'<p> catatan</p>',1,5,3,'2025-01-01 09:41:36','e6faf8c9-c369-4cbb-b99c-f0166ad9da29','2025-01-02 08:04:27','e6faf8c9-c369-4cbb-b99c-f0166ad9da29',NULL,NULL),('e00e8b0d-07f9-4d89-8a5b-005157904e64','SmartTV 32 inch','SE001',0,3000000,'<p> mencoba</p>',1,1,3,'2025-01-01 09:14:55','e6faf8c9-c369-4cbb-b99c-f0166ad9da29','2025-01-02 08:15:10','e6faf8c9-c369-4cbb-b99c-f0166ad9da29',NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -619,7 +620,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('0cfeeb6b-72d7-48d8-b9d3-65429748ae24','Iman','iman','628122324748','$2y$12$3SCuYvDRJm4tiTUtOMCi/e9uURJ6K4qihP.W5bv7Nog2Rrt0zsFfS',17,NULL,'2025-01-01 07:08:12','2025-01-01 07:08:12',NULL),('0ef1b058-74f5-4665-832d-2b104bfa6b58','Rani','rani','62813237343745','$2y$12$fyS0Yi8IB/lJgH4Xmdkxo.W3nlZ/egH75MmjPFSwFq1kF1jf2ygG.',18,NULL,'2025-01-01 07:03:29','2025-01-01 07:03:29',NULL),('21af6c86-882b-4d43-83c5-b868b29ba0b3','Malih','malih','628434323321','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',20,NULL,'2025-01-01 07:06:51','2025-01-01 07:06:51',NULL),('21af6c86-882b-4d43-83c5-b868b29ba0b4','Kristi','Kristi','628434323322','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',21,NULL,'2025-01-01 07:06:51','2025-01-01 07:06:51',NULL),('21af6c86-882b-4d43-83c5-b868b29ba0b5','Sueb','sueb','628434323323','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',19,NULL,'2025-01-01 07:06:51','2025-01-01 07:06:51',NULL),('4e2c844c-54c3-4ec8-b62f-072dd1883492','Facere tenetur aut s','Id ipsa sunt at ull','62812843430545','$2y$12$KS4pXu4dS/B7QQsZxN/smeRta06oitEox.V3VBp60NW4eqh.RATOO',21,NULL,'2025-01-22 01:22:17','2025-01-22 01:22:17',NULL),('e6faf8c9-c369-4cbb-b99c-f0166ad9da29','Rizal Pamungkas','super.admin','6281288616004','$2y$12$2GI.Wzfe0WPAxF9IzKXjIuofNVeGNraUtR9KxGSeYMNSZaD4oUj7C',22,NULL,'2024-12-31 22:52:09','2025-01-22 01:22:41',NULL);
+INSERT INTO `users` VALUES ('0cfeeb6b-72d7-48d8-b9d3-65429748ae24','Iman','iman','628122324748','$2y$12$3SCuYvDRJm4tiTUtOMCi/e9uURJ6K4qihP.W5bv7Nog2Rrt0zsFfS',17,NULL,'2025-01-01 07:08:12','2025-01-01 07:08:12',NULL),('0ef1b058-74f5-4665-832d-2b104bfa6b58','Rani','rani','62813237343745','$2y$12$fyS0Yi8IB/lJgH4Xmdkxo.W3nlZ/egH75MmjPFSwFq1kF1jf2ygG.',18,NULL,'2025-01-01 07:03:29','2025-01-01 07:03:29',NULL),('21af6c86-882b-4d43-83c5-b868b29ba0b3','Malih','malih','628434323321','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',20,NULL,'2025-01-01 07:06:51','2025-01-01 07:06:51',NULL),('21af6c86-882b-4d43-83c5-b868b29ba0b4','Kristi','Kristi','628434323322','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',21,NULL,'2025-01-01 07:06:51','2025-01-01 07:06:51',NULL),('21af6c86-882b-4d43-83c5-b868b29ba0b5','Sueb','sueb','628434323323','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',19,NULL,'2025-01-01 07:06:51','2025-01-01 07:06:51',NULL),('4e2c844c-54c3-4ec8-b62f-072dd1883492','Facere tenetur aut s','Id ipsa sunt at ull','62812843430545','$2y$12$KS4pXu4dS/B7QQsZxN/smeRta06oitEox.V3VBp60NW4eqh.RATOO',21,NULL,'2025-01-22 01:22:17','2025-01-22 01:22:17',NULL),('e6faf8c9-c369-4cbb-b99c-f0166ad9da29','Rizal Pamungkas 1','super.admin','6281288616004','$2y$12$EsvdrHX0nXtua9tb7KVY7OmrnjKsPbR2cd4hZHjy7.zWUzLaUcOU.',22,NULL,'2024-12-31 22:52:09','2025-07-08 13:25:21',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -640,4 +641,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-15 12:10:53
+-- Dump completed on 2025-08-16 16:04:29

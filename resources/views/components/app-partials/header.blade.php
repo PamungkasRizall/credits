@@ -1,10 +1,10 @@
 <nav class="header print:hidden">
     <!-- App Header  -->
-    <div class="header-container relative flex w-full bg-white dark:bg-navy-750 print:hidden">
+    <div class="header-container relative flex w-full bg-white dark:bg-navy-700 print:hidden sm:flex-col">
         <!-- Header Items -->
-        <div class="flex w-full items-center justify-between">
+        <div class="flex w-full items-center justify-between sm:h-16">
             <!-- Left: Sidebar Toggle Button -->
-            <div class="h-7 w-7">
+            <div class="h-7 w-7 sm:hidden">
                 <button
                     class="menu-toggle ml-0.5 flex h-7 w-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80"
                     :class="$store.global.isSidebarExpanded && 'active'"
@@ -13,6 +13,16 @@
                     <span></span>
                     <span></span>
                 </button>
+            </div>
+
+            <div class="hidden items-center space-x-2 sm:flex">
+                <a href="/">
+                    <img class="h-10 w-10 transition-transform duration-500 ease-in-out hover:rotate-[360deg]"
+                        src="{{ asset('images/logo/logo.png') }}" alt="logo" />
+                </a>
+                <span class="text-xl font-semibold uppercase text-slate-700 dark:text-navy-100">
+                    lineone
+                </span>
             </div>
 
             <!-- Right: Header buttons -->
@@ -45,7 +55,8 @@
 
 
                 <!-- Notification-->
-                <div x-effect="if($store.global.isSearchbarActive) isShowPopper = false" x-data="usePopper({ placement: 'bottom-end', offset: 12 })"
+                <div x-effect="if($store.global.isSearchbarActive) isShowPopper = false"
+                    x-data="usePopper({ placement: 'bottom-end', offset: 12 })"
                     @click.outside="if(isShowPopper) isShowPopper = false" class="flex-X">
                     <button @click="isShowPopper = !isShowPopper" x-ref="popperRef"
                         class="btn relative h-8 w-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
@@ -464,8 +475,7 @@
                                     class="is-scrollbar-hidden overflow-y-auto px-4">
                                     <div class="mt-8 pb-8 text-center">
                                         <img class="mx-auto w-36"
-                                            src="{{ asset('images/illustrations/empty-girl-box.svg') }}"
-                                            alt="image" />
+                                            src="{{ asset('images/illustrations/empty-girl-box.svg') }}" alt="image" />
                                         <div class="mt-5">
                                             <p class="text-base font-semibold text-slate-700 dark:text-navy-100">
                                                 No any logs
@@ -493,5 +503,9 @@
             </div>
 
         </div>
+
+        <!-- Header Navigation -->
+        <x-app-partials.header-navigation-horizontal />
+
     </div>
 </nav>

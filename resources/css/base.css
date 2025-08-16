@@ -220,3 +220,27 @@ code.inline-code {
         @apply bg-slate-400 dark:bg-navy-300;
     }
 }
+
+.navigation\:horizontal nav.header {
+    width: 100%
+}
+
+@media (min-width:640px) {
+    .navigation\:horizontal nav.header {
+        height: auto
+    }
+}
+
+.navigation\:horizontal .main-content {
+    margin-left: 0
+}
+
+@media (min-width:640px) {
+    .navigation\:horizontal .main-content {
+        margin-top: 7rem
+    }
+}
+
+.filepond--list-scroller::-webkit-scrollbar:horizontal {
+    height: 0
+}

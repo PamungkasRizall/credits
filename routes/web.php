@@ -27,30 +27,23 @@ Route::group(['middleware' => ['auth']], function() {
     // Search Ajax
     Route::get('search/{category}', [HomeController::class, 'search'])->name('search');
 
-    //MASTER
-    // Route::name('master.')->prefix('master')->group(function () {
-
-        Route::get('users', Users::class)->name('users');
+    //REGISTRASI
+    Route::name('master.')->prefix('master')->group(function () {
         Route::get('roles', Roles::class)->name('roles');
         Route::get('categories', Categories::class)->name('categories');
+    });
+    Route::name('registration.')->prefix('registration')->group(function () {
+
+        Route::get('users', Users::class)->name('users');
         Route::get('products', Products::class)->name('products');
         Route::get('sub-districts', SubDistricts::class)->name(name: 'sub-districts');
         Route::get('consumers', Consumers::class)->name('consumers');
 
-        // Route::get('courses', CoursesIndex::class)->name('courses');
-        // Route::name('courses.')->prefix('courses')->group(function () {
-        //     Route::get('create', Courses::class)->name('create');
-        //     Route::get('{id}/edit', Courses::class)->name('edit');
-        // });
-    // });
-
-    //Receivables Registration
-    // Route::get('receivables-registration', ReceivablesRegistration::class)->name('receivables-registration');
-
-    Route::name('receivables-registration.')->prefix('receivables-registration')->group(function () {
-        Route::get('/', ReceivablesRegistration::class)->name('index');
-        Route::get('{id}/print-invoice', [HomeController::class, 'printInvoice'])->name('print-invoice');
-        Route::get('{id}/print-angsuran-coupon', [HomeController::class, 'printAngsuranCoupon'])->name('print-angsuran-coupon');
-        Route::get('{id}/print-angsuran-card', [HomeController::class, 'printAngsuranCard'])->name('print-angsuran-card');
+        Route::name('receivables-registration.')->prefix('receivables-registration')->group(function () {
+            Route::get('/', ReceivablesRegistration::class)->name('index');
+            Route::get('{id}/print-invoice', [HomeController::class, 'printInvoice'])->name('print-invoice');
+            Route::get('{id}/print-angsuran-coupon', [HomeController::class, 'printAngsuranCoupon'])->name('print-angsuran-coupon');
+            Route::get('{id}/print-angsuran-card', [HomeController::class, 'printAngsuranCard'])->name('print-angsuran-card');
+        });
     });
 });

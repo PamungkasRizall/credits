@@ -108,7 +108,7 @@ class ReceivablesRegistration extends Component
 
     private function loadMetaData(): void
     {
-        $this->meta_title = 'Registrasi Piutang';
+        $this->meta_title = 'Faktur Baru';
     }
 
     public function render()

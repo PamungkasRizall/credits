@@ -1,7 +1,7 @@
 <div class="rounded-lg bg-info/10 px-4 pb-5 dark:bg-navy-800 sm:p-5 my-4">
     <div class="flex items-center pb-3 justify-between">
         <h2 class="font-medium tracking-wide text-slate-700 dark:text-navy-100">
-            Registrasi Piutang
+            Faktur Baru
         </h2>
         <span class="border-b border-dotted border-current pb-0.5 text-xs+ font-medium text-primary">
             {{ $receivablesRegistration->reg_code }}
