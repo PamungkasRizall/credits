@@ -15,7 +15,7 @@ class ConsumerDTO
         public readonly string $name,
         public readonly string $nik,
         public readonly Carbon $date_of_birth,
-        public readonly Gender $gender,
+        public readonly bool $gender,
         public readonly string $phone,
         public readonly string $home_address,
         public readonly string $business_type,
