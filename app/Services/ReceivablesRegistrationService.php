@@ -55,7 +55,7 @@ class ReceivablesRegistrationService
 
             if ($receivablesRegistration->status == ReceivablesRegistrationStatus::PENDING)
             {
-                $districtLetterCode = $receivablesRegistration->consumer->district_letter_code;
+                $districtLetterCode = $receivablesRegistration->consumer->subDistrict->district_letter_code;
 
                 if (!$districtLetterCode) {
                     throw new Exception('Kode Huruf Kecamatan Tidak Ditemukan.');
